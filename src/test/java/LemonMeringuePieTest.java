@@ -9,7 +9,7 @@ public class LemonMeringuePieTest {
 
     @BeforeEach
     void setUp(){
-        lemonMeringuePie = new LemonMeringuePie("Joe's Lemon Meringue Pie", "Soft", "Lemon", 20, 6, 10, 20);
+        lemonMeringuePie = new LemonMeringuePie(20, 6, 10, 20);
     }
 
     @Test
@@ -25,6 +25,17 @@ public class LemonMeringuePieTest {
     @Test
     void nowCutIntoSlices(){
         assertThat(lemonMeringuePie.cutIntoSlices()).isEqualTo("Cut into slices now!");
+    }
+
+    @Test
+    void givenMessageForCustomer(){
+        assertThat(lemonMeringuePie.messageForCustomer()).isEqualTo("Here is your Joe's Lemon Meringue Pie.");
+    }
+
+    @Test
+    void hasBeenReheated(){
+        String result = lemonMeringuePie.reheat("50C");
+        assertThat(result).isEqualTo("This Joe's Lemon Meringue Pie has been reheated to 50C.");
     }
 
 

@@ -9,7 +9,7 @@ public class BlueberryPieTest {
 
     @BeforeEach
     void setUp(){
-        blueberryPie = new BlueberryPie("Joe's Blueberry Pie", "Hard", "Blueberry", 50, 12.50, 20, 25, "Fresh");
+        blueberryPie = new BlueberryPie( 50, 12.50, 20, 25, "Fresh");
     }
 
     @Test
@@ -26,6 +26,11 @@ public class BlueberryPieTest {
     void addedBlackberries(){
         blueberryPie.addBlackberries();
         assertThat(blueberryPie.addBlackberries()).isEqualTo("Blueberry and Blackberry");
+    }
+
+    @Test
+    void givenMessageForCustomer(){
+        assertThat(blueberryPie.messageForCustomer()).isEqualTo("Here is your Joe's Blueberry Pie.");
     }
 
 }

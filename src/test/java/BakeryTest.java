@@ -14,15 +14,14 @@ public class BakeryTest {
 
     @Test
     void countPiesInOven() {
-        assertThat(bakery.countPiesInOven()).isEqualTo(0);
+        int result = bakery.countPiesInOven();
+        assertThat(result).isEqualTo(0);
     }
 
     @Test
     void addPiesToOven() {
-        ApplePie applePie = new ApplePie("New AP", "soft", "apple", 20, 1, 2, 20);
+        ApplePie applePie = new ApplePie(20, 1, 2, 20);
         bakery.addPiesToOven(applePie);
         assertThat(bakery.countPiesInOven()).isEqualTo(1);
-
-
     }
 }

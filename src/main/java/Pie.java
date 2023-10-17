@@ -1,12 +1,12 @@
 public abstract class Pie extends Bakery {
 
-    private String name;
-    private String crustType;
+    protected String name;
+    protected String crustType;
     protected String fruitType;
-    private int producedPerHour;
-    private double cost;
-    private double soldToForCustomer;
-    private int soldPerHour;
+    protected int producedPerHour;
+    protected double cost;
+    protected double soldToForCustomer;
+    protected int soldPerHour;
 
 //    Constructor:
 
@@ -27,5 +27,8 @@ public abstract class Pie extends Bakery {
     public boolean doCustomersLikeIt(){
         return soldPerHour == producedPerHour;
     }
+
+//    This is my abstract method in the super-class.
+    public abstract String messageForCustomer();
 
 }
